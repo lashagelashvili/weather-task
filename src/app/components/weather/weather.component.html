@@ -1,1 +1,19 @@
-<p>weather works!</p>
+<div class="main">
+  <h1>Local cast weather</h1>
+  <p>Your city, your forecast, right now!</p>
+  <p>Enter a city (eg."London", "London, UK")</p>
+  <input type="text" placeholder="Enter city..." #input />
+  <h3 *ngIf="loading">Loading...</h3>
+  <ng-container *ngIf="!loading">
+    <h2>Current Weather</h2>
+    <p>
+      {{ currentData.city }} {{ currentData.country }}
+      {{ currentDate.weekDay }}, {{ currentDate.month }} {{ currentDate.date }},
+      {{ currentDate.year }} {{ currentData.temperature | number : "1.0-0" }}°C
+    </p>
+    <div class="main-weather">
+      <img *ngIf="currentData.icon" [src]="currentData.icon" alt="" />
+      <span>{{ currentData.weather }}</span>
+    </div>
+  </ng-container>
+</div>
