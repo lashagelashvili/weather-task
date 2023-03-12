@@ -50,4 +50,7 @@ interface Clouds {
 interface Sys {
   sunrise: number;
   sunset: number;
+  country: string;
+  id: number;
+  type: number;
 }
